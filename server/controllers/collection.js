@@ -13,11 +13,11 @@ module.exports = {
    */
   update: async ctx => {
     const user = ctx.state.$wxInfo.userinfo.openId;
-    const { commentId, starStatus } = +ctx.request.body;
+    const { commentId, starStatus } = ctx.request.body;
     if (!isNaN(commentId)) {
       if (starStatus === UNSTAR) {
         await DB.query('Delete from collection where user_id = ? and comment_id = ?', [user, commentId])
-      } else if (starStatus === STARED){
+      } else if (starStatus === STARED) {
         await DB.query('Insert into collection (user_id, comment_id) values (?, ?)', [user, commentId])
       }
     }

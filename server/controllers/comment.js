@@ -15,9 +15,10 @@ module.exports = {
    */
   userList: async ctx => {
     const user = ctx.state.$wxInfo.userinfo.openId;
-    const {movieId} = ctx.request.query;
-    if (!movieId) movieId = null
-    ctx.state.data = await DB.query('Select comment.id as commentId, comment.content as content, comment.duration as duration, comment.type as type, comment.user_avatar as userAvatar, comment.user_name as userName, movie.image as movieImage, movie.title as movieTitle from comment left join movie on comment.movie_id = movie.id where user_id = ? and comment.movie_id = ifnull(?, comment.movie_id)', [user, movieId])
+    const { movieId } = ctx.request.query;
+    if (!isNaN(movieId)) {
+      ctx.state.data = await DB.query('Select comment.id as commentId, comment.content as content, comment.duration as duration, comment.type as type, comment.user_avatar as userAvatar, comment.user_name as userName, movie.image as movieImage, movie.title as movieTitle from comment left join movie on comment.movie_id = movie.id where user_id = ? and comment.movie_id = ifnull(?, comment.movie_id)', [user, movieId])
+    }
   },
   /**
    * 根据电影id获取影评列表
