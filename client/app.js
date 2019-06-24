@@ -48,6 +48,7 @@ App({
       url: config.service.requestUrl,
       login: true,
       success: result => {
+        /// 改动第一次
         let data = result.data
         if (!data.code) {
           userInfo = data.data
@@ -57,6 +58,7 @@ App({
         }
       },
       fail: error => {
+        /// 改动第二次
         console.log(error)
         fail && fail()
       },
