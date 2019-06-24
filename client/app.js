@@ -13,7 +13,7 @@ App({
    * 因为qcloud.login中会执行wx.checkSession()操作，故不需要先执行wx.checkSession()
    */
   login({ success, fail, complete }) {
-
+    //分支test2_1
     if (userInfo) {
       console.log('third')
       return success && success(userInfo);
