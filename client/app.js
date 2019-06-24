@@ -17,6 +17,8 @@ App({
     //分支test2_3111_test5
     //cherry-pick验证1
     //cherry-pick验证2
+    //cherry-pick验证3
+    //cherry-pick验证4
     if (userInfo) {
       console.log('third')
       return success && success(userInfo);
