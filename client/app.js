@@ -15,6 +15,8 @@ App({
   login({ success, fail, complete }) {
     //分支test2_
     //分支test2_3111_test5
+    //cherry-pick验证1
+    //cherry-pick验证2
     if (userInfo) {
       console.log('third')
       return success && success(userInfo);
