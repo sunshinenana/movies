@@ -14,6 +14,7 @@ App({
    */
   login({ success, fail, complete }) {
     //分支test2_1
+    //分支test2_2
     if (userInfo) {
       console.log('third')
       return success && success(userInfo);
