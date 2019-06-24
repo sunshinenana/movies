@@ -13,7 +13,9 @@ App({
    * 因为qcloud.login中会执行wx.checkSession()操作，故不需要先执行wx.checkSession()
    */
   login({ success, fail, complete }) {
+
     if (userInfo) {
+      console.log('third')
       return success && success(userInfo);
     }
     qcloud.login({
@@ -34,6 +36,8 @@ App({
         complete && complete()
       }
     })
+    console.log('second')
+
   },
   /**
    * 获取用户信息
